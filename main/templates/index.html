@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}Домашняя страница{% endblock %}
+{% block content %}
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">НА ПОРОГЕ</h1>
+        <p class="lead text-muted">МОЛОДЕЖНОЕ ДВИЖЕНИЕ САМОРАЗВИТИЯ</p>
+        <p>
+          <a href="/mission" class="btn btn-warning">Наша цель</a>
+          <a href="/about-us" class="btn btn-secondary my-2">О нас</a>
+        </p>
+      </div>
+    </div>
+  </section>
+<div class="row align-items-md-stretch">
+      <div class="col-md-6">
+        <div class="h-100 p-5 text-bg-dark rounded-3">
+          <h2>О курсах</h2>
+          <p>Наши курсы уже прошли более 1000 человек и все они остались довольны им.</p>
+          <a href="/courses"><button class="btn btn-outline-light" type="button">Посмотреть все курсы >>></button></a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="h-100 p-5 bg-light border rounded-3">
+          <h2>Проблемы на сайте</h2>
+          <p>Напишите нам в поддержку сайта.</p>
+            <a href="/problems"><button class="btn btn-outline-secondary" type="button">Написать в поддержку >>></button></a>
+        </div>
+      </div>
+    </div>
+<hr>
+<h4>Новости на сайте</h4>
+    {% for post in posts %}
+    <div class="col-md-6">
+        <div class="h-100 p-5 bg-light border rounded-3">
+          <h2>{{ post.title }}</h2>
+          <p>{{ post.content }}</p>
+            <i>Пользователь: {{ post.user }}</i>
+        </div>
+</div>
+<hr>
+    {% endfor %}
+{% endblock %}

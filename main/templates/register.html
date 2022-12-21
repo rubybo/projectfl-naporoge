@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Регистрация{% endblock %}
+
+{% block content %}
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Регистрация</h1>
+        <p class="lead text-muted">Спасибо за покупку курса, зарегистрируйтесь и войдите для работы курсов</p>
+      </div>
+    </div>
+  </section>
+<div class="container mt-5">
+    <form method="post">
+    {{ form.hidden_tag() }}
+    {{ form.username }}
+    <hr>
+    {{ form.password }}
+    <hr>
+    {{ form.submit }}
+
+    </form>
+</div>
+{% endblock %}

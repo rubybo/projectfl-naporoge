@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Посты{% endblock %}
+
+
+{% block content %}
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Посты</h1>
+        <p class="lead text-muted">Страница для администратора, для создания постов</p>
+      </div>
+    </div>
+  </section>
+<form method="post">
+    <input placeholder="Название поста" type="text" name="title" id="title"><br>
+    <textarea placeholder="Текст поста" name="content" id="content" cols="30" rows="10"></textarea><br>
+    <input placeholder="Имя пользователя" type="text" name="user" id="user"><br>
+    <input type="submit" value="Создать пост">
+</form>
+{% endblock %}
+
